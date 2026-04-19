@@ -12,24 +12,29 @@
       <h1>任务数据面板</h1>
       <p>请使用 JavaScript 完成页面与 API 的交互。</p>
     </div>
-    <button id="loadTasksBtn">刷新任务</button>
+    <!-- 修改1: ID改为 refresh-btn -->
+    <button id="refresh-btn">刷新任务</button>
   </header>
 
   <main class="layout">
     <section class="panel">
       <h2>新增任务</h2>
-      <form id="taskForm" class="task-form">
+      <!-- 修改2: ID改为 task-form -->
+      <form id="task-form" class="task-form">
         <label>
           任务名称
-          <input type="text" name="title" placeholder="例如：整理接口文档" required />
+          <!-- 修改3: 添加ID便于JS获取 -->
+          <input type="text" id="task-title" name="title" placeholder="例如：整理接口文档" required />
         </label>
         <label>
           负责人
-          <input type="text" name="owner" placeholder="例如：张三" required />
+          <!-- 修改4: 添加ID便于JS获取 -->
+          <input type="text" id="task-owner" name="owner" placeholder="例如：张三" required />
         </label>
         <label>
           状态
-          <select name="status" required>
+          <!-- 修改5: 添加ID便于JS获取 -->
+          <select id="task-status" name="status" required>
             <option value="todo">待开始</option>
             <option value="doing">进行中</option>
             <option value="done">已完成</option>
@@ -37,7 +42,8 @@
         </label>
         <button type="submit">提交任务</button>
       </form>
-      <p id="formMessage" class="message"></p>
+      <!-- 修改6: 将formMessage改为message-box，统一消息显示 -->
+      <p id="message-box" class="message"></p>
     </section>
 
     <section class="panel">
@@ -45,16 +51,19 @@
       <div class="toolbar">
         <label>
           按状态筛选
-          <select id="statusFilter">
+          <!-- 修改7: ID改为 status-filter，值也改为中文 -->
+          <select id="status-filter">
             <option value="all">全部</option>
-            <option value="todo">待开始</option>
-            <option value="doing">进行中</option>
-            <option value="done">已完成</option>
+            <option value="待开始">待开始</option>
+            <option value="进行中">进行中</option>
+            <option value="已完成">已完成</option>
           </select>
         </label>
       </div>
-      <ul id="taskList" class="task-list"></ul>
-      <p id="listMessage" class="message"></p>
+      <!-- 修改8: ID改为 task-list -->
+      <ul id="task-list" class="task-list"></ul>
+      <!-- 修改9: 可以保留这个作为额外的消息区，或删除 -->
+      <!-- <p id="listMessage" class="message"></p> -->
     </section>
   </main>
 
