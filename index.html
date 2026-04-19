@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>任务数据面板</title>
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <header class="page-header">
+    <div>
+      <h1>任务数据面板</h1>
+      <p>请使用 JavaScript 完成页面与 API 的交互。</p>
+    </div>
+    <button id="loadTasksBtn">刷新任务</button>
+  </header>
+
+  <main class="layout">
+    <section class="panel">
+      <h2>新增任务</h2>
+      <form id="taskForm" class="task-form">
+        <label>
+          任务名称
+          <input type="text" name="title" placeholder="例如：整理接口文档" required />
+        </label>
+        <label>
+          负责人
+          <input type="text" name="owner" placeholder="例如：张三" required />
+        </label>
+        <label>
+          状态
+          <select name="status" required>
+            <option value="todo">待开始</option>
+            <option value="doing">进行中</option>
+            <option value="done">已完成</option>
+          </select>
+        </label>
+        <button type="submit">提交任务</button>
+      </form>
+      <p id="formMessage" class="message"></p>
+    </section>
+
+    <section class="panel">
+      <h2>任务列表</h2>
+      <div class="toolbar">
+        <label>
+          按状态筛选
+          <select id="statusFilter">
+            <option value="all">全部</option>
+            <option value="todo">待开始</option>
+            <option value="doing">进行中</option>
+            <option value="done">已完成</option>
+          </select>
+        </label>
+      </div>
+      <ul id="taskList" class="task-list"></ul>
+      <p id="listMessage" class="message"></p>
+    </section>
+  </main>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>
